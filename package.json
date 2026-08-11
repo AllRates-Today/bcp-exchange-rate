@@ -1,7 +1,7 @@
 {
   "name": "bcp-exchange-rate",
-  "version": "1.0.3",
-  "description": "Official Banco Central del Paraguay (Paraguay) daily exchange rates — ~26 currencies vs PYG, history since 2016. Zero-dependency Node.js/TypeScript client.",
+  "version": "1.1.2",
+  "description": "Official Banco Central del Paraguay (Paraguay) daily exchange rates — 26 currencies vs PYG, history since 2016. Zero-dependency Node.js/TypeScript client.",
   "keywords": [
     "bcp",
     "banco",

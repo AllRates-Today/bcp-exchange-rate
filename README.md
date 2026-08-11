@@ -1,10 +1,10 @@
 # Banco Central del Paraguay Exchange Rate API client
 
-Official **Banco Central del Paraguay** (Paraguay) daily exchange rates in Node.js / TypeScript — ~26 currencies against the PYG, with history back to 2016. Zero dependencies, works in Node 18+, Bun, Deno, and edge runtimes (uses global `fetch`).
+Official **Banco Central del Paraguay** (Paraguay) daily exchange rates in Node.js / TypeScript — 26 currencies against the PYG, with history back to 2016. Zero dependencies, works in Node 18+, Bun, Deno, and edge runtimes (uses global `fetch`).
 
 These are the *published central bank rates* required for tax filings, customs valuations, audits, and compliant invoicing — not moving market rates. Every response carries the publisher's own publication date.
 
-Powered by [AllRatesToday](https://allratestoday.com/central-bank-rates-api/bcp/). Get a free API key at [allratestoday.com/register](https://allratestoday.com/register) — 300 requests/month, no credit card.
+Powered by [AllRatesToday](https://allratestoday.com/central-bank-rates-api/bcp/). Get a free API key at [allratestoday.com/register](https://allratestoday.com/register) — no credit card required.
 
 ## Install
 
@@ -41,6 +41,14 @@ const series = await getHistory(
   { apiKey: 'art_live_...' }
 );
 ```
+
+## Currencies covered
+
+Banco Central del Paraguay currently publishes rates covering **27 currencies** (as of the latest table):
+
+`AED` · `ARS` · `AUD` · `BOB` · `BRL` · `CAD` · `CHF` · `CLP` · `CNY` · `COP` · `DKK` · `EUR` · `GBP` · `JPY` · `MXN` · `NOK` · `NZD` · `PEN` · `PYG` · `SEK` · `SGD` · `TWD` · `USD` · `UYU` · `XAU` · `XDR` · `ZAR`
+
+Pairs the central bank does not print directly are resolved from this table (see below).
 
 ## Published vs derived rates
 
