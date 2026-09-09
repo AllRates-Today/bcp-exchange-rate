@@ -70,10 +70,10 @@ const pair = await getRate('USD', 'PYG', { apiKey: 'art_live_...' });
 {
   bank: 'bcp',
   name: 'Banco Central del Paraguay',
-  rate_date: '2026-08-10',   // Banco Central del Paraguay's own publication date
+  rate_date: '2026-09-08',   // Banco Central del Paraguay's own publication date
   source: 'USD',
   target: 'PYG',
-  rate: 5955.2,
+  rate: 5899.02,
   rate_type: 'reference',
   derived: false,
   method: 'published',
@@ -98,9 +98,9 @@ console.log(table.rate_date, table.rates.length);
 {
   bank: 'bcp',
   name: 'Banco Central del Paraguay',
-  rate_date: '2026-08-10',
+  rate_date: '2026-09-08',
   rates: [
-    { "base": "USD", "quote": "PYG", "type": "reference", "value": 5955.2 },
+    { "base": "USD", "quote": "PYG", "type": "reference", "value": 5899.02 },
     // … the rest of the published table (26 currencies vs PYG)
   ],
   disclaimer: '…'
@@ -140,7 +140,7 @@ Paid plans. One resolved rate per publication date — ready for charting, reval
 import { getHistory } from 'bcp-exchange-rate';
 
 const series = await getHistory(
-  { source: 'USD', target: 'PYG', from: '2026-01-01', to: '2026-08-10' },
+  { source: 'USD', target: 'PYG', from: '2026-01-01', to: '2026-09-08' },
   { apiKey: 'art_live_...' }
 );
 ```
@@ -153,11 +153,11 @@ const series = await getHistory(
   source: 'USD',
   target: 'PYG',
   from: '2026-01-01',
-  to: '2026-08-10',
+  to: '2026-09-08',
   count: 152,
   rates: [
     // one entry per publication date
-    { date: '2026-08-10', rate: 5955.2, rate_type: 'reference', derived: false, method: 'published' },
+    { date: '2026-09-08', rate: 5899.02, rate_type: 'reference', derived: false, method: 'published' },
     // …
   ],
   disclaimer: '…'
@@ -170,9 +170,9 @@ Pass `{ symbol: 'USD' }` instead of `source`/`target` to get the raw published r
 
 ## 🗺️ Currencies covered
 
-Banco Central del Paraguay currently publishes rates covering **27 currencies** (as of the latest table):
+Banco Central del Paraguay currently publishes rates covering **26 currencies** against the PYG (as of the latest table):
 
-`AED` · `ARS` · `AUD` · `BOB` · `BRL` · `CAD` · `CHF` · `CLP` · `CNY` · `COP` · `DKK` · `EUR` · `GBP` · `JPY` · `MXN` · `NOK` · `NZD` · `PEN` · `PYG` · `SEK` · `SGD` · `TWD` · `USD` · `UYU` · `XAU` · `XDR` · `ZAR`
+🇦🇪 `AED` · 🇦🇷 `ARS` · 🇦🇺 `AUD` · 🇧🇴 `BOB` · 🇧🇷 `BRL` · 🇨🇦 `CAD` · 🇨🇭 `CHF` · 🇨🇱 `CLP` · 🇨🇳 `CNY` · 🇨🇴 `COP` · 🇩🇰 `DKK` · 🇪🇺 `EUR` · 🇬🇧 `GBP` · 🇯🇵 `JPY` · 🇲🇽 `MXN` · 🇳🇴 `NOK` · 🇳🇿 `NZD` · 🇵🇪 `PEN` · 🇸🇪 `SEK` · 🇸🇬 `SGD` · 🇹🇼 `TWD` · 🇺🇸 `USD` · 🇺🇾 `UYU` · `XAU` · `XDR` · 🇿🇦 `ZAR`
 
 ## ⚖️ Published vs derived rates
 
@@ -235,6 +235,14 @@ getRate('USD', 'PYG', { apiKey: 'art_live_...' }).then((pair) => console.log(pai
 | `getLatestRates({ apiKey })` | Free | The central bank's full latest published table |
 | `getRatesForDate(date, { apiKey, source?, target? })` | Paid | The official table (or one pair) for a YYYY-MM-DD date |
 | `getHistory({ symbol \| source+target, from?, to? }, { apiKey })` | Paid | Daily series since 2016 |
+
+## 📥 Bulk data (no key)
+
+Need the whole archive rather than an API call? The same published tables are mirrored daily as open data:
+
+- Hugging Face: [AllRates/central-bank-exchange-rates](https://huggingface.co/datasets/AllRates/central-bank-exchange-rates) — one CSV per institution (`rates/bcp.csv`)
+- Kaggle: [allratestoday/central-bank-exchange-rates](https://www.kaggle.com/datasets/allratestoday/central-bank-exchange-rates)
+- CDN JSON: `https://cdn.jsdelivr.net/gh/AllRates-Today/central-bank-exchange-rates@main/data/bcp/latest.json`
 
 ## 🔗 Links
 
