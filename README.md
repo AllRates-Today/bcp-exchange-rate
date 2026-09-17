@@ -1,4 +1,4 @@
-# Banco Central del Paraguay Exchange Rate API — bcp-exchange-rate
+# Banco Central del Paraguay Exchange Rates API — bcp-exchange-rate
 
 [![npm version](https://img.shields.io/npm/v/bcp-exchange-rate.svg)](https://www.npmjs.com/package/bcp-exchange-rate)
 [![license](https://img.shields.io/npm/l/bcp-exchange-rate.svg)](https://github.com/AllRates-Today/bcp-exchange-rate/blob/main/LICENSE)
@@ -18,6 +18,21 @@
 
 > **Official rate, not mid-market:** every value here is a number Banco Central del Paraguay itself published, fixed once printed and carrying the central bank's own `rate_date` — what filings and audits require. Need the live interbank midpoint for pricing or display instead? Use the [mid-market API](https://allratestoday.com/docs/) or [`@allratestoday/sdk`](https://www.npmjs.com/package/@allratestoday/sdk). The two can diverge by several percent.
 
+## ⚡ Try it without a key
+
+The latest Banco Central del Paraguay table is also served keyless, CORS-open and edge-cached, for evaluation, embeds and AI agents:
+
+```bash
+curl "https://allratestoday.com/api/open/central-bank/bcp?source=USD&target=PYG"
+```
+
+```js
+const r = await fetch('https://allratestoday.com/api/open/central-bank/bcp').then((x) => x.json());
+console.log(r.rate_date, r.rates.length); // the central bank's latest published table, no key
+```
+
+The open endpoint serves the *latest* table only and asks for a visible attribution link. The client below uses the keyed API, which adds point-in-time tables, history, and CSV/XML/Excel output.
+
 ## 🔑 Get your API key
 
 Get a free API key at [allratestoday.com/register](https://allratestoday.com/register) — no credit card required. Latest rates are on every plan, including free.
@@ -36,7 +51,7 @@ yarn add bcp-exchange-rate
 pnpm add bcp-exchange-rate
 ```
 
-Also published under the org scope as [`@allratestoday/bcp-exchange-rate`](https://www.npmjs.com/package/@allratestoday/bcp-exchange-rate) — same code, same versions.
+Requires Node 18+ (global `fetch`); also runs on Bun, Deno and edge runtimes. Also published under the org scope as [`@allratestoday/bcp-exchange-rate`](https://www.npmjs.com/package/@allratestoday/bcp-exchange-rate) — same code, same versions.
 
 ## 🏁 Quick start
 
@@ -77,7 +92,7 @@ const pair = await getRate('USD', 'PYG', { apiKey: 'art_live_...' });
   rate_type: 'reference',
   derived: false,
   method: 'published',
-  disclaimer: '…'
+  disclaimer: 'Official rates as published by the named central bank. On weekends/holidays the most recent published rate_date is returned.'
 }
 ```
 
@@ -174,6 +189,40 @@ Banco Central del Paraguay currently publishes rates covering **26 currencies** 
 
 🇦🇪 `AED` · 🇦🇷 `ARS` · 🇦🇺 `AUD` · 🇧🇴 `BOB` · 🇧🇷 `BRL` · 🇨🇦 `CAD` · 🇨🇭 `CHF` · 🇨🇱 `CLP` · 🇨🇳 `CNY` · 🇨🇴 `COP` · 🇩🇰 `DKK` · 🇪🇺 `EUR` · 🇬🇧 `GBP` · 🇯🇵 `JPY` · 🇲🇽 `MXN` · 🇳🇴 `NOK` · 🇳🇿 `NZD` · 🇵🇪 `PEN` · 🇸🇪 `SEK` · 🇸🇬 `SGD` · 🇹🇼 `TWD` · 🇺🇸 `USD` · 🇺🇾 `UYU` · `XAU` · `XDR` · 🇿🇦 `ZAR`
 
+## 🏛️ Source
+
+The Banco Central del Paraguay publishes its daily planilla de cotizaciones each afternoon: guaraní rates for around 26 currencies plus each currency's dollar cross. It is the official reference for Paraguayan banking, customs valuation, and accounting.
+
+- Publisher's own page: [Planilla de cotizaciones](https://www.bcp.gov.py/webapps/web/cotizacion/monedas) · [www.bcp.gov.py](https://www.bcp.gov.py)
+- Publication: every business day; the exact schedule, freshness status and any current delay are on the [Banco Central del Paraguay rates page](https://allratestoday.com/central-bank-rates-api/bcp/)
+- Values are stored unmodified, with the publisher's own `rate_date` on every row — see the [methodology](https://allratestoday.com/official-rates-methodology/)
+
+## 🧭 Reading the numbers
+
+- `value` is always **quote currency per 1 unit of base currency** (`base: "EUR", quote: "USD", value: 1.15` means 1 EUR = 1.15 USD).
+- Banco Central del Paraguay quotes **PYG per 1 unit of foreign currency** (e.g. `base: "USD", quote: "PYG"` means PYG per one US dollar).
+- Need the other way round? Ask `getRate(target, source)` and the API inverts or crosses for you, flagged `derived: true` — never divide a published rate yourself in a compliance workflow.
+- Precious-metal codes (`XAU`, `XAG`, `XPT`, `XPD`) are quoted **per troy ounce**.
+- `rate_type` tells you which of the central bank's series a row belongs to (`reference` here); some publishers print buy/sell or several fixings for the same pair.
+
+## 🧩 ERP & accounting systems
+
+Loading the official Banco Central del Paraguay rate into an accounting system is a supported workflow, not a hack. Step-by-step guides with the direction each system expects:
+
+- [Dynamics 365 Business Central](https://allratestoday.com/docs/integrations/business-central/) — built-in Currency Exchange Rate Service, no code
+- [Xero](https://allratestoday.com/docs/integrations/xero/) · [QuickBooks Online](https://allratestoday.com/docs/integrations/quickbooks/) · [SAP S/4HANA and ECC](https://allratestoday.com/docs/integrations/sap/) · [Odoo](https://allratestoday.com/docs/integrations/odoo/)
+
+The same keyed endpoints return `?format=csv`, `?format=xml` and `?format=xlsx`, and accept the key as `?api_key=` on the URL for importers that cannot send headers:
+
+```bash
+curl "https://allratestoday.com/api/v1/central-bank/bcp/latest?format=xml&api_key=art_live_..."
+```
+
+## 🤖 AI agents
+
+- MCP server: `npx -y @allratestoday/central-bank-mcp` (stdio) or the hosted endpoint `https://allratestoday.com/api/mcp` — tools for official rates, history, cross-bank comparison and publication calendars
+- Machine-readable site guide: [llms.txt](https://allratestoday.com/llms.txt) · [for-ai-agents](https://allratestoday.com/for-ai-agents/)
+
 ## ⚖️ Published vs derived rates
 
 If Banco Central del Paraguay does not print a pair directly, the API resolves it from the central bank's own table and says so — official and computed values are never confused:
@@ -248,7 +297,8 @@ Need the whole archive rather than an API call? The same published tables are mi
 
 - [Banco Central del Paraguay rates page](https://allratestoday.com/central-bank-rates-api/bcp/) — live table, publication cadence, FAQ
 - [All central bank sources](https://allratestoday.com/central-bank-rates-api/)
-- [API documentation](https://allratestoday.com/docs/#central-bank) · [Interactive reference](https://allratestoday.com/api-reference/)
+- [Package docs on the site](https://allratestoday.com/docs/sdk/bcp-exchange-rate/) · [ERP integration guides](https://allratestoday.com/docs/integrations/)
+- [API documentation](https://allratestoday.com/docs/#central-bank) · [Interactive reference](https://allratestoday.com/api-reference/) · [Methodology](https://allratestoday.com/official-rates-methodology/)
 - [Register (free)](https://allratestoday.com/register) · [Pricing](https://allratestoday.com/pricing/)
 - [GitHub](https://github.com/AllRates-Today/bcp-exchange-rate)
 
