@@ -85,10 +85,10 @@ const pair = await getRate('USD', 'PYG', { apiKey: 'art_live_...' });
 {
   bank: 'bcp',
   name: 'Banco Central del Paraguay',
-  rate_date: '2026-09-25',   // Banco Central del Paraguay's own publication date
+  rate_date: '2026-10-06',   // Banco Central del Paraguay's own publication date
   source: 'USD',
   target: 'PYG',
-  rate: 5873.44,
+  rate: 5850.05,
   rate_type: 'reference',
   derived: false,
   method: 'published',
@@ -113,9 +113,9 @@ console.log(table.rate_date, table.rates.length);
 {
   bank: 'bcp',
   name: 'Banco Central del Paraguay',
-  rate_date: '2026-09-25',
+  rate_date: '2026-10-06',
   rates: [
-    { "base": "USD", "quote": "PYG", "type": "reference", "value": 5873.44 },
+    { "base": "USD", "quote": "PYG", "type": "reference", "value": 5850.05 },
     // … the rest of the published table (26 currencies vs PYG)
   ],
   disclaimer: '…'
@@ -155,7 +155,7 @@ Paid plans. One resolved rate per publication date — ready for charting, reval
 import { getHistory } from 'bcp-exchange-rate';
 
 const series = await getHistory(
-  { source: 'USD', target: 'PYG', from: '2026-01-01', to: '2026-09-25' },
+  { source: 'USD', target: 'PYG', from: '2026-01-01', to: '2026-10-06' },
   { apiKey: 'art_live_...' }
 );
 ```
@@ -168,11 +168,11 @@ const series = await getHistory(
   source: 'USD',
   target: 'PYG',
   from: '2026-01-01',
-  to: '2026-09-25',
+  to: '2026-10-06',
   count: 152,
   rates: [
     // one entry per publication date
-    { date: '2026-09-25', rate: 5873.44, rate_type: 'reference', derived: false, method: 'published' },
+    { date: '2026-10-06', rate: 5850.05, rate_type: 'reference', derived: false, method: 'published' },
     // …
   ],
   disclaimer: '…'
