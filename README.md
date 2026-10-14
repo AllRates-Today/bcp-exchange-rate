@@ -42,36 +42,36 @@ The open endpoint serves the *latest* table only and asks for a visible attribut
 The image is rendered live from the keyless endpoint above, so it follows the central bank's publications on npm and on GitHub alike without a new release. The text copy below is there for search and copy-paste: on GitHub [a daily Action](.github/workflows/daily-table.yml) refreshes it whenever the central bank publishes a new table; on npm it is as of the package's publish date.
 
 <!-- daily-table:start -->
-Published **2026-10-13** by Banco Central del Paraguay — 26 rates. Updated 2026-10-14.
+Published **2026-10-14** by Banco Central del Paraguay — 26 rates. Updated 2026-10-14.
 
 | Base | Quote | Type | Rate |
 | --- | --- | --- | ---: |
-| AED | PYG | reference | 1552.95 |
+| AED | PYG | reference | 1551.37 |
 | ARS | PYG | reference | 3.76 |
-| AUD | PYG | reference | 3982.42 |
-| BOB | PYG | reference | 487.51 |
-| BRL | PYG | reference | 1138.99 |
-| CAD | PYG | reference | 4012.83 |
-| CHF | PYG | reference | 6850.64 |
-| CLP | PYG | reference | 5.82 |
-| CNY | PYG | reference | 852.32 |
-| COP | PYG | reference | 1.79 |
-| DKK | PYG | reference | 854.11 |
-| EUR | PYG | reference | 6384.31 |
-| GBP | PYG | reference | 7556.45 |
-| JPY | PYG | reference | 36.01 |
-| MXN | PYG | reference | 311.11 |
-| NOK | PYG | reference | 598.67 |
-| NZD | PYG | reference | 3201.57 |
-| PEN | PYG | reference | 1660.51 |
-| SEK | PYG | reference | 571.76 |
-| SGD | PYG | reference | 4456.13 |
-| TWD | PYG | reference | 177.71 |
-| USD | PYG | reference | 5703.84 |
-| UYU | PYG | reference | 141.96 |
-| XAU | PYG | reference | 23766760.51 |
-| XDR | PYG | reference | 7715.01 |
-| ZAR | PYG | reference | 345.53 |
+| AUD | PYG | reference | 3964.69 |
+| BOB | PYG | reference | 487.01 |
+| BRL | PYG | reference | 1130.61 |
+| CAD | PYG | reference | 3989.66 |
+| CHF | PYG | reference | 6793.07 |
+| CLP | PYG | reference | 5.77 |
+| CNY | PYG | reference | 850.73 |
+| COP | PYG | reference | 1.78 |
+| DKK | PYG | reference | 847.76 |
+| EUR | PYG | reference | 6336.78 |
+| GBP | PYG | reference | 7496.9 |
+| JPY | PYG | reference | 35.87 |
+| MXN | PYG | reference | 307.3 |
+| NOK | PYG | reference | 596.61 |
+| NZD | PYG | reference | 3174.94 |
+| PEN | PYG | reference | 1659.73 |
+| SEK | PYG | reference | 565.74 |
+| SGD | PYG | reference | 4428.41 |
+| TWD | PYG | reference | 177.65 |
+| USD | PYG | reference | 5698.03 |
+| UYU | PYG | reference | 141.72 |
+| XAU | PYG | reference | 23317535.35 |
+| XDR | PYG | reference | 7708.3 |
+| ZAR | PYG | reference | 342.2 |
 
 Source: [Official rates published by BCP, served by AllRatesToday](https://allratestoday.com/central-bank-rates-api/bcp/). Rates are as printed by the central bank; AllRatesToday is not affiliated with it.
 <!-- daily-table:end -->
