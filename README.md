@@ -42,36 +42,36 @@ The open endpoint serves the *latest* table only and asks for a visible attribut
 The image is rendered live from the keyless endpoint above, so it follows the central bank's publications on npm and on GitHub alike without a new release. The text copy below is there for search and copy-paste: on GitHub [a daily Action](.github/workflows/daily-table.yml) refreshes it whenever the central bank publishes a new table; on npm it is as of the package's publish date.
 
 <!-- daily-table:start -->
-Published **2026-10-15** by Banco Central del Paraguay — 26 rates. Updated 2026-10-15.
+Published **2026-10-16** by Banco Central del Paraguay — 26 rates. Updated 2026-10-16.
 
 | Base | Quote | Type | Rate |
 | --- | --- | --- | ---: |
-| AED | PYG | reference | 1556.5 |
-| ARS | PYG | reference | 3.78 |
-| AUD | PYG | reference | 3954.5 |
-| BOB | PYG | reference | 489.41 |
-| BRL | PYG | reference | 1133.68 |
-| CAD | PYG | reference | 4024.96 |
-| CHF | PYG | reference | 6888.71 |
-| CLP | PYG | reference | 5.81 |
-| CNY | PYG | reference | 854.34 |
-| COP | PYG | reference | 1.81 |
-| DKK | PYG | reference | 856.26 |
-| EUR | PYG | reference | 6399.91 |
-| GBP | PYG | reference | 7571.74 |
-| JPY | PYG | reference | 36.14 |
-| MXN | PYG | reference | 309.74 |
-| NOK | PYG | reference | 602.14 |
-| NZD | PYG | reference | 3206.82 |
-| PEN | PYG | reference | 1668 |
-| SEK | PYG | reference | 573.43 |
-| SGD | PYG | reference | 4456.42 |
-| TWD | PYG | reference | 177.14 |
-| USD | PYG | reference | 5716.25 |
-| UYU | PYG | reference | 142.58 |
-| XAU | PYG | reference | 23740615.18 |
-| XDR | PYG | reference | 7739.8 |
-| ZAR | PYG | reference | 345.98 |
+| AED | PYG | reference | 1571.21 |
+| ARS | PYG | reference | 3.82 |
+| AUD | PYG | reference | 4017.71 |
+| BOB | PYG | reference | 494.08 |
+| BRL | PYG | reference | 1136.45 |
+| CAD | PYG | reference | 4080.98 |
+| CHF | PYG | reference | 7014.6 |
+| CLP | PYG | reference | 5.89 |
+| CNY | PYG | reference | 863.13 |
+| COP | PYG | reference | 1.82 |
+| DKK | PYG | reference | 869.15 |
+| EUR | PYG | reference | 6496.31 |
+| GBP | PYG | reference | 7707.05 |
+| JPY | PYG | reference | 36.57 |
+| MXN | PYG | reference | 312.83 |
+| NOK | PYG | reference | 611.92 |
+| NZD | PYG | reference | 3269.8 |
+| PEN | PYG | reference | 1686.02 |
+| SEK | PYG | reference | 583.53 |
+| SGD | PYG | reference | 4512.75 |
+| TWD | PYG | reference | 178.45 |
+| USD | PYG | reference | 5770.91 |
+| UYU | PYG | reference | 144.09 |
+| XAU | PYG | reference | 24151546.9 |
+| XDR | PYG | reference | 7828.24 |
+| ZAR | PYG | reference | 351.2 |
 
 Source: [Official rates published by BCP, served by AllRatesToday](https://allratestoday.com/central-bank-rates-api/bcp/). Rates are as printed by the central bank; AllRatesToday is not affiliated with it.
 <!-- daily-table:end -->
@@ -266,7 +266,7 @@ curl "https://allratestoday.com/api/v1/central-bank/bcp/latest?format=xml&api_ke
 - MCP server: `npx -y @allratestoday/central-bank-mcp` (stdio) or the hosted endpoint `https://allratestoday.com/api/mcp` — tools for official rates, history, cross-bank comparison and publication calendars
 - Already using the general SDK or MCP server? Since 2026-10-01 [`@allratestoday/sdk`](https://www.npmjs.com/package/@allratestoday/sdk) 1.4+ has `officialRates('bcp')` and [`@allratestoday/mcp-server`](https://www.npmjs.com/package/@allratestoday/mcp-server) 0.6+ has a `get_official_rates` tool — both return this source's latest table with no key, so you can add it without a second dependency
 - Claude Code plugin (no key): `/plugin marketplace add AllRates-Today/claude-code-plugin` then `/plugin install allratestoday@allratestoday` — bundles both MCP servers plus an `/official-rate bcp ...` command
-- Need dated tables or history for an evaluation? Agents can self-issue a trial key with no signup: `POST https://allratestoday.com/api/agent/keys` (send `Content-Type: application/json`) returns a 100-call key valid 7 days; the MCP servers expose it as `request_trial_key`
+- Evaluating? Agents can self-issue a trial key with no signup: `POST https://allratestoday.com/api/agent/keys` (send `Content-Type: application/json`) returns a 100-call key valid 7 days that covers the free-plan methods (latest table, pairs); dated tables and history need a [paid plan](https://allratestoday.com/pricing/). The MCP servers expose it as `request_trial_key`
 - Machine-readable site guide: [llms.txt](https://allratestoday.com/llms.txt) · [for-ai-agents](https://allratestoday.com/for-ai-agents/)
 
 ## ⚖️ Published vs derived rates
