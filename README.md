@@ -32,36 +32,36 @@ The image is rendered live from the keyless endpoint, so it follows the central 
 
 <!-- daily-table:start -->
 <details>
-<summary>Table as text: published 2026-10-29 by Banco Central del Paraguay — 26 rates. Updated 2026-10-30.</summary>
+<summary>Table as text: published 2026-10-30 by Banco Central del Paraguay — 26 rates. Updated 2026-10-30.</summary>
 
 | Base | Quote | Type | Rate |
 | --- | --- | --- | ---: |
-| AED | PYG | reference | 1632.16 |
-| ARS | PYG | reference | 3.89 |
-| AUD | PYG | reference | 4212.52 |
-| BOB | PYG | reference | 494.62 |
-| BRL | PYG | reference | 1113.09 |
-| CAD | PYG | reference | 4285.35 |
-| CHF | PYG | reference | 7251.45 |
-| CLP | PYG | reference | 6.05 |
-| CNY | PYG | reference | 899.98 |
-| COP | PYG | reference | 1.9 |
-| DKK | PYG | reference | 895.41 |
-| EUR | PYG | reference | 6691.96 |
-| GBP | PYG | reference | 8007.81 |
-| JPY | PYG | reference | 37.97 |
-| MXN | PYG | reference | 319.02 |
-| NOK | PYG | reference | 646.62 |
-| NZD | PYG | reference | 3370.26 |
-| PEN | PYG | reference | 1734.05 |
-| SEK | PYG | reference | 608.4 |
-| SGD | PYG | reference | 4681.95 |
-| TWD | PYG | reference | 184.48 |
-| USD | PYG | reference | 5994.77 |
-| UYU | PYG | reference | 149.33 |
-| XAU | PYG | reference | 24135303.71 |
-| XDR | PYG | reference | 8108.53 |
-| ZAR | PYG | reference | 360.83 |
+| AED | PYG | reference | 1618.55 |
+| ARS | PYG | reference | 3.87 |
+| AUD | PYG | reference | 4179.76 |
+| BOB | PYG | reference | 490.9 |
+| BRL | PYG | reference | 1100.01 |
+| CAD | PYG | reference | 4258.73 |
+| CHF | PYG | reference | 7208.39 |
+| CLP | PYG | reference | 6 |
+| CNY | PYG | reference | 893.45 |
+| COP | PYG | reference | 1.88 |
+| DKK | PYG | reference | 886.88 |
+| EUR | PYG | reference | 6627.81 |
+| GBP | PYG | reference | 7960.03 |
+| JPY | PYG | reference | 37.79 |
+| MXN | PYG | reference | 316.07 |
+| NOK | PYG | reference | 644.65 |
+| NZD | PYG | reference | 3349.87 |
+| PEN | PYG | reference | 1718.59 |
+| SEK | PYG | reference | 604.04 |
+| SGD | PYG | reference | 4650.52 |
+| TWD | PYG | reference | 183.06 |
+| USD | PYG | reference | 5944.76 |
+| UYU | PYG | reference | 148.24 |
+| XAU | PYG | reference | 23315467.62 |
+| XDR | PYG | reference | 8061.69 |
+| ZAR | PYG | reference | 356.39 |
 
 </details>
 
