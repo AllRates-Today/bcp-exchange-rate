@@ -32,36 +32,36 @@ The image is rendered live from the keyless endpoint, so it follows the central 
 
 <!-- daily-table:start -->
 <details>
-<summary>Table as text: published 2026-11-20 by Banco Central del Paraguay — 26 rates. Updated 2026-11-21.</summary>
+<summary>Table as text: published 2026-11-23 by Banco Central del Paraguay — 26 rates. Updated 2026-11-23.</summary>
 
 | Base | Quote | Type | Rate |
 | --- | --- | --- | ---: |
-| AED | PYG | reference | 1744.41 |
+| AED | PYG | reference | 1750.36 |
 | ARS | PYG | reference | 4.07 |
-| AUD | PYG | reference | 4258.13 |
-| BOB | PYG | reference | 545.28 |
-| BRL | PYG | reference | 1078.67 |
-| CAD | PYG | reference | 4474.2 |
-| CHF | PYG | reference | 7634.72 |
-| CLP | PYG | reference | 6.29 |
-| CNY | PYG | reference | 960.39 |
-| COP | PYG | reference | 1.85 |
-| DKK | PYG | reference | 941.55 |
-| EUR | PYG | reference | 7036.87 |
-| GBP | PYG | reference | 8395.17 |
-| JPY | PYG | reference | 40.37 |
-| MXN | PYG | reference | 336.61 |
-| NOK | PYG | reference | 655.91 |
-| NZD | PYG | reference | 3516.84 |
-| PEN | PYG | reference | 1855.51 |
-| SEK | PYG | reference | 627.45 |
-| SGD | PYG | reference | 4970.18 |
-| TWD | PYG | reference | 194.53 |
-| USD | PYG | reference | 6407.06 |
-| UYU | PYG | reference | 157.97 |
-| XAU | PYG | reference | 22735067.99 |
-| XDR | PYG | reference | 8603.4 |
-| ZAR | PYG | reference | 367.01 |
+| AUD | PYG | reference | 4263.12 |
+| BOB | PYG | reference | 547.15 |
+| BRL | PYG | reference | 1077.71 |
+| CAD | PYG | reference | 4474.58 |
+| CHF | PYG | reference | 7629.13 |
+| CLP | PYG | reference | 6.33 |
+| CNY | PYG | reference | 964.59 |
+| COP | PYG | reference | 1.84 |
+| DKK | PYG | reference | 938.48 |
+| EUR | PYG | reference | 7014.12 |
+| GBP | PYG | reference | 8382.86 |
+| JPY | PYG | reference | 40.35 |
+| MXN | PYG | reference | 335.66 |
+| NOK | PYG | reference | 653.57 |
+| NZD | PYG | reference | 3501.27 |
+| PEN | PYG | reference | 1866.47 |
+| SEK | PYG | reference | 625.59 |
+| SGD | PYG | reference | 4977.99 |
+| TWD | PYG | reference | 195.42 |
+| USD | PYG | reference | 6429.07 |
+| UYU | PYG | reference | 158.19 |
+| XAU | PYG | reference | 23659427.63 |
+| XDR | PYG | reference | 8635.53 |
+| ZAR | PYG | reference | 369.81 |
 
 </details>
 
@@ -332,7 +332,7 @@ Need the whole archive rather than an API call? The same official tables are mir
 
 - **Website:** [allratestoday.com](https://allratestoday.com)
 - [Banco Central del Paraguay rates page](https://allratestoday.com/central-bank-rates-api/bcp/) — live table, publication cadence, FAQ
-- [All central bank sources](https://allratestoday.com/central-bank-rates-api/) · [Full list of 130+ central banks and tax authorities](https://allratestoday.com/central-bank-rates-api/institutions/) — one API, the same response shape for every source
+- [All central bank sources](https://allratestoday.com/central-bank-rates-api/) · [Full list of 120+ central banks and 50+ tax authorities](https://allratestoday.com/central-bank-rates-api/institutions/) — one API, the same response shape for every source
 - [Download central bank rates](https://allratestoday.com/download-central-bank-rates/) — every bank's latest table and history as Excel, CSV or JSON
 - [Bank Exchange Rate API](https://allratestoday.com/bank-exchange-rate-api/) — live buy and sell rates from 1,200+ commercial banks in 120+ countries · [npm](https://www.npmjs.com/package/bank-exchange-rates) · [GitHub](https://github.com/AllRates-Today/bank-exchange-rates)
 - [Package docs on the site](https://allratestoday.com/docs/sdk/bcp-exchange-rate/) · [ERP integration guides](https://allratestoday.com/docs/integrations/)
